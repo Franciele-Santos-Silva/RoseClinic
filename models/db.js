@@ -7,14 +7,14 @@ const sequelize = new Sequelize("cadastro", "root", "!3675pfg45j", {
 
 sequelize
   .authenticate()
-  .then(function () {
+  .then(() => {
     console.log("Deu certo!!!");
   })
-  .catch(function (erro) {
+  .catch((erro) => {
     console.log("Ero ao conectar" + erro);
   });
 
 module.exports = {
-    Sequelize: Sequelize,
-    sequelize: sequelize
-} 
+  Sequelize: Sequelize,
+  sequelize: sequelize,
+};
