@@ -1,4 +1,4 @@
-const db = require("./db")
+const db = require("./db");
 
 const Produto = db.sequelize.define("produtos",{
     nome: {
@@ -16,3 +16,5 @@ const Produto = db.sequelize.define("produtos",{
 });
 
 Produto.sync({force: false});
+
+module.exports = Produto;
