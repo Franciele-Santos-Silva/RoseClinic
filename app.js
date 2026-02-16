@@ -33,13 +33,10 @@ app.get("/", (req, res) => {
 app.get("/:nome", (req, res) => {
   Produtos.findAll({ where: { nome: req.params.nome } })
     .then((produto) => {
-      res.send({
-        mensagem: "Produto encontrado",
-        dados: produto,
-      });
+      res.send(produto);
     })
     .catch((erro) => {
-      res.send("Produto não encontrado" + erro);
+      res.send(erro);
     });
 });
 
@@ -71,6 +68,6 @@ app.delete("/deletar/:id", (req, res) => {
 });
 
 const PORT = process.env.PORT || 8081;
-app.listen(PORT,"0.0.0.0", () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log("Rodando...");
 });
